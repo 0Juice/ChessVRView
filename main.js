@@ -9,9 +9,7 @@ const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg'),
-});
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
 //const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -98,7 +96,7 @@ loader.load('./models/wooden_chess_set.glb', function ( gltf ) {
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);
 
-document.querySelector('#btn').appendChild(VRButton.createButton(renderer));
+document.body.appendChild(VRButton.createButton(renderer));
 
 const dolly = new THREE.Object3D();
 dolly.position.set(0, 5, 5);
