@@ -30,7 +30,7 @@ camera.position.set(5, 0, 0);
 
 // Define your render function
 function render() {
-    model.rotation.y += 0.01;
+    model.rotation.y += 0.008;
     renderer.render(scene, camera);
 }
 
